@@ -45,7 +45,7 @@ module.exports = yeoman.generators.Base.extend({
       done()
     }.bind(this))
   },
- 
+
   askForLibDescription: function () {
     var done = this.async()
       , prompts = [{
@@ -56,7 +56,7 @@ module.exports = yeoman.generators.Base.extend({
 
     this.prompt(prompts, function (props) {
       this.libDescription = props.libDescription
-      
+
       done()
     }.bind(this))
   },
@@ -119,12 +119,12 @@ function toCamelCase (input) {
 }
 
 function githubUserInfo (name, cb) {
-  if (name === 'zheneva') return cb({
+  if (name === 'opudalo') return cb({
     name: 'Eugene Chechurin',
     email: 'e.chechurin@gmail.com',
-    html_url: 'https://github.com/zheneva'
+    html_url: 'https://github.com/opudalo'
   })
-  
+
   var GithubApi = require('github')
     , proxy = process.env.http_proxy || process.env.HTTP_PROXY || process.env.https_proxy || process.env.HTTPS_PROXY || null
     , config = {
