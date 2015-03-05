@@ -81,6 +81,11 @@ module.exports = yeoman.generators.Base.extend({
     this.template('_package.json', 'package.json')
   },
 
+  make: function () {
+    this.copy('Makefile', 'Makefile')
+  },
+
+
   git: function () {
     this.copy('gitignore', '.gitignore')
   },
