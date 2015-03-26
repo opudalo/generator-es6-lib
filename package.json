@@ -1,6 +1,6 @@
 {
   "name": "generator-es6-lib",
-  "version": "1.0.3",
+  "version": "1.0.5",
   "description": "Yeoman es6 micro-library generator",
   "license": "MIT",
   "main": "app/index.js",
@@ -19,17 +19,14 @@
   "keywords": [
     "yeoman-generator",
     "es6",
+    "babel",
     "micro",
+    "mocha",
     "microjs",
-    "library",
-    "generator"
+    "library"
   ],
   "dependencies": {
-    "yeoman-generator": "^0.18.0",
-    "chalk": "^0.5.0",
-    "github": "^0.2.0"
-  },
-  "peerDependencies": {
-    "yo": ">=1.0.0"
+    "github": "^0.2.3",
+    "yeoman-generator": "^0.18.10"
   }
 }

@@ -1,7 +1,11 @@
-var path = require('path')
-  , yeoman = require('yeoman-generator')
+var yeoman = require('yeoman-generator')
   , defaults = {
-    baseFileName: 'index'
+    baseFileName: 'index',
+    githubUser: {
+      name: 'Eugene Chechurin',
+      email: 'e.chechurin@gmail.com',
+      html_url: 'https://github.com/opudalo'
+    }
   }
 
 
@@ -115,11 +119,7 @@ function toCamelCase (input) {
 }
 
 function githubUserInfo (name, cb) {
-  if (name === 'opudalo') return cb({
-    name: 'Eugene Chechurin',
-    email: 'e.chechurin@gmail.com',
-    html_url: 'https://github.com/opudalo'
-  })
+  if (name === 'opudalo') return cb(defaults.githubUser)
 
   var GithubApi = require('github')
     , proxy = process.env.http_proxy || process.env.HTTP_PROXY || process.env.https_proxy || process.env.HTTPS_PROXY || null
