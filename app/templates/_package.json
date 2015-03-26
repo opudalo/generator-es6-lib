@@ -5,13 +5,13 @@
   "main": "<%= baseFileName %>.js",
   "repository": {
     "type": "git",
-    "url": "<%= githubUrl %>.git"
+    "url": "<%= githubUrl %>/<%= libName %>"
   },
   "keywords": [
     "es6",
     "micro",
     "microjs",
-    "<libName>"
+    "<%= libName %>"
   ],
   "author": {
     "name": "<%= realname %>",
@@ -31,6 +31,9 @@
     "chai": "^2.1.0",
     "mocha": "^2.1.0",
     "gulp": "^3.8.11",
+    "gulp-git": "^1.1.0",
+    "gulp-bump": "^0.3.0",
+    "gulp-tag-version": "^1.2.1",
     "gulp-webpack-build": "^0.5.1",
     "gulp-mocha-phantomjs": "^0.5.3"
   }

@@ -1,4 +1,7 @@
 var gulp = require('gulp')
+  , git = require('gulp-git')
+  , bump = require('gulp-bump')
+  , tag_version = require('gulp-tag-version');
   , webpack = require('gulp-webpack-build')
   , CONFIG_FILENAME = webpack.config.CONFIG_FILENAME
   , mochaPhantomJS = require('gulp-mocha-phantomjs')
@@ -39,7 +42,24 @@ gulp.task('test', ['webpack'], function () {
     .on('error', onerror)
 })
 
+/*
+ *  gulp patch     # makes v0.1.0 → v0.1.1
+ *  gulp feature   # makes v0.1.1 → v0.2.0
+ *  gulp release   # makes v0.2.1 → v1.0.0
+ */
+gulp.task('patch', function() { return inc('patch') })
+gulp.task('feature', function() { return inc('minor') })
+gulp.task('release', function() { return inc('major') })
+
 function onerror(err) {
   console.log(err.toString)
   this.emit('end')
+}
+
+function inc(importance) {
+  return gulp.src(['./package.json', './bower.json'])
+    .pipe(bump({type: importance}))
+    .pipe(gulp.dest('./'))
+    .pipe(git.commit('version bump'))
+    .pipe(tag_version({ prefix: '' }));
 }
