@@ -2,7 +2,7 @@
   "name": "<%= libName %>",
   "version": "0.0.1",
   "description": "<%= libDescription %>",
-  "main": "<%= baseFileName %>.js",
+  "main": "src/<%= baseFileName %>.js",
   "repository": {
     "type": "git",
     "url": "<%= githubUrl %>/<%= libName %>"
