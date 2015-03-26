@@ -1,6 +1,6 @@
 {
   "name": "generator-es6-lib",
-  "version": "1.3.1",
+  "version": "1.4.0",
   "description": "Yeoman es6 micro-library generator",
   "license": "MIT",
   "main": "app/index.js",
