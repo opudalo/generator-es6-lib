@@ -9,7 +9,6 @@ module.exports = yeoman.generators.Base.extend({
   init: function () {
     this.pkg = require('../package.json')
     this.currentYear = (new Date()).getFullYear()
-
   },
 
   askForUsername: function () {
@@ -61,7 +60,6 @@ module.exports = yeoman.generators.Base.extend({
     }.bind(this))
   },
 
-
   userInfo: function () {
     var done = this.async()
 
@@ -73,28 +71,23 @@ module.exports = yeoman.generators.Base.extend({
     }.bind(this))
   },
 
-  bower: function () {
-    this.template('_bower.json', 'bower.json')
-  },
-
-  packageJSON: function () {
-    this.template('_package.json', 'package.json')
-  },
-
-  make: function () {
-    this.copy('Makefile', 'Makefile')
-  },
-
-
-  git: function () {
-    this.copy('gitignore', '.gitignore')
-  },
-
   projectFiles: function () {
-    this.template('index-tmpl.js', this.baseFileName + '.js')
-    this.template('test-tmpl.js', 'test.js')
-    this.template('README.md', 'README.md')
-    this.template('LICENSE.md', 'LICENSE.md')
+    this.mkdir('dist');
+    this.mkdir('src');
+    this.mkdir('test');
+
+    this.template('src/_index.js', 'src/' + this.baseFileName + '.js')
+    this.template('test/_test.js', 'test/test.js')
+    this.template('_README.md', 'README.md')
+    this.template('_LICENSE.md', 'LICENSE.md')
+    this.template('_bower.json', 'bower.json')
+    this.template('_package.json', 'package.json')
+
+    this.copy('test/runner.html', 'test/runner.html')
+    this.copy('Makefile', 'Makefile')
+    this.copy('gitignore', '.gitignore')
+    this.copy('webpack.config.js', 'webpack.config.js')
+    this.copy('gulpfile.js', 'gulpfile.js')
   },
 
   install: function () {
@@ -110,9 +103,7 @@ function extractLib (_, appname) {
   var slugged = _.slugify(appname)
   var match = slugged.match(/^generator-(.+)/)
 
-  if (match && match.length === 2) {
-    return match[1].toLowerCase()
-  }
+  if (match && match.length === 2) return match[1].toLowerCase()
 
   return slugged
 }
@@ -144,7 +135,6 @@ function githubUserInfo (name, cb) {
   github.user.getFrom({
     user: name
   }, function (err, res) {
-    console.log(res)
     if (err) throw new Error(err.message + '\n\nCannot fetch your github profile. Make sure you\'ve typed it correctly.')
     cb(JSON.parse(JSON.stringify(res)))
   })

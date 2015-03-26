@@ -5,7 +5,7 @@
   "main": "<%= baseFileName %>.js",
   "repository": {
     "type": "git",
-    "url": "https://github.com/zheneva/emitter.git"
+    "url": "<%= githubUrl %>.git"
   },
   "keywords": [
     "es6",
@@ -29,6 +29,9 @@
     "babel-core": "^4.6.1",
     "babel-loader": "^4.0.0",
     "chai": "^2.1.0",
-    "mocha": "^2.1.0"
+    "mocha": "^2.1.0",
+    "gulp": "^3.8.11",
+    "gulp-webpack-build": "^0.5.1",
+    "gulp-mocha-phantomjs": "^0.5.3"
   }
 }

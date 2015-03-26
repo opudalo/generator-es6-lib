@@ -1,14 +1,14 @@
 {
   "name": "generator-es6-lib",
-  "version": "0.0.1",
+  "version": "1.0.0",
   "description": "Yeoman es6 micro-library generator",
   "license": "MIT",
   "main": "app/index.js",
-  "repository": "zheneva/generator-es6-lib",
+  "repository": "opudalo/generator-es6-lib",
   "author": {
     "name": "Eugene Chechurin",
     "email": "",
-    "url": "https://github.com/zheneva"
+    "url": "https://github.com/opudalo"
   },
   "engines": {
     "node": ">=0.10.0"

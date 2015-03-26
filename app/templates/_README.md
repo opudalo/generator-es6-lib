@@ -4,9 +4,9 @@
 
 ## Installation
 
-- `bower install --save <%= githubUser %>/<%= libName %>`
-or 
 - `npm  install --save <%= githubUser %>/<%= libName %>`
+or 
+- `bower install --save <%= githubUser %>/<%= libName %>`
 
 
 ## Examples

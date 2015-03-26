@@ -16,4 +16,3 @@ test-w:
 	  $(SOURCE)
 
 .PHONY: test test-w
-
