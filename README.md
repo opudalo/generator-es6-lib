@@ -5,6 +5,7 @@ Yeoman es6 micro-library generator
 ## Features
 
 ✓ es6 ready 
+
 ✓ mocha unit tests
 
 ## Usage 
