@@ -11,6 +11,8 @@ var yeoman = require('yeoman-generator')
 
 module.exports = yeoman.generators.Base.extend({
   init: function () {
+    this._.templateSettings.interpolate = /<%=([\s\S]+?)%>/g
+
     this.pkg = require('../package.json')
     this.currentYear = (new Date()).getFullYear()
   },
@@ -64,6 +66,22 @@ module.exports = yeoman.generators.Base.extend({
     }.bind(this))
   },
 
+  askForTestEnvironment: function () {
+    var done = this.async()
+      , prompts = [{
+        type: "list",
+        name: 'testEnvironment',
+        message: 'Select test environment:',
+        choices: ['browser', 'node']
+      }]
+
+    this.prompt(prompts, function (props) {
+      this.testEnvironment = props.testEnvironment
+
+      done()
+    }.bind(this))
+  },
+
   userInfo: function () {
     var done = this.async()
 
@@ -76,21 +94,23 @@ module.exports = yeoman.generators.Base.extend({
   },
 
   projectFiles: function () {
-    this.mkdir('dist');
+    this.mkdir('tools');
     this.mkdir('src');
     this.mkdir('test');
+    this.mkdir('dist');
+    this.mkdir('lib');
 
     this.template('src/_index.js', 'src/' + this.baseFileName + '.js')
     this.template('test/_test.js', 'test/test.js')
+    this.template('tools/_gulpTasks.js', 'tools/gulpTasks.js')
     this.template('_README.md', 'README.md')
     this.template('_LICENSE.md', 'LICENSE.md')
     this.template('_bower.json', 'bower.json')
     this.template('_package.json', 'package.json')
 
+    this.copy('tools/webpackConfig.js', 'tools/webpackConfig.js')
     this.copy('test/runner.html', 'test/runner.html')
-    this.copy('Makefile', 'Makefile')
     this.copy('gitignore', '.gitignore')
-    this.copy('webpack.config.js', 'webpack.config.js')
     this.copy('gulpfile.js', 'gulpfile.js')
   },
 

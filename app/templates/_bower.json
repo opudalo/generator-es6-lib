@@ -5,7 +5,7 @@
   "authors": [
     "<%= realname %> <<%= email %>> (<%= githubUrl %>)"
   ],
-  "main": "src/<%= baseFileName %>.js",
+  "main": "lib/<%= baseFileName %>.js",
   "license": "MIT",
   "homepage": "<%= githubUrl %>/<%= libName %>",
   "ignore": [
@@ -16,4 +16,3 @@
   "dependencies": {
   }
 }
-

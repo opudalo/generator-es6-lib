@@ -1,6 +1,6 @@
-var webpack = require('webpack')
+import webpack from 'webpack'
 
-module.exports = {
+export default {
   resolve: {
     modulesDirectories: ['node_modules', 'bower_components']
   },
@@ -16,9 +16,9 @@ module.exports = {
     )
   ],
   context: __dirname,
-  entry: './test/test.js',
+  entry: `../test/test.js`,
   output: {
-    path: './dist',
+    path: `./dist`,
     filename: 'bundle.js'
   }
 }
