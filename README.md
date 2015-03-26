@@ -11,8 +11,8 @@ Yeoman es6 micro-library generator
 
 Pre-requirements:
 ```bash
-npm install -g yo
-npm install -g generator-es6-lib
+npm i -g yo
+npm i -g generator-es6-lib
 ```
 
 Generate your library:
