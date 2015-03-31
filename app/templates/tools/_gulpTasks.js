@@ -42,7 +42,7 @@ export default function (gulp, rootDir) {
       .on('error', onerror)
   )
 
-  gulp.task('test-node', () => {
+  gulp.task('test-node', ['prepublish'], () => {
     gulp.src(['test/**/*.js'])
       .pipe(mocha())
       .on('error', onerror)
@@ -87,7 +87,6 @@ export default function (gulp, rootDir) {
   gulp.task('release', () => inc('major') )
 
   function onerror(err) {
-    console.log(err.toString)
     this.emit('end')
   }
 
