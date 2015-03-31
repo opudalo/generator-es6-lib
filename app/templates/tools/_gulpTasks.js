@@ -87,6 +87,7 @@ export default function (gulp, rootDir) {
   gulp.task('release', () => inc('major') )
 
   function onerror(err) {
+    console.error(err)
     this.emit('end')
   }
 
