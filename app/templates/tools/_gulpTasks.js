@@ -54,7 +54,7 @@ export default function (gulp, rootDir) {
   })
 
   gulp.task('webpack', () => {
-    gulp.src(path.join(tools, 'webpackConfig.js'))
+    var stream = gulp.src(path.join(tools, 'webpackConfig.js'))
       .pipe(webpack.compile())
       .pipe(webpack.format({
         version: false,
@@ -65,6 +65,7 @@ export default function (gulp, rootDir) {
         warnings: true
       }))
       .pipe(gulp.dest(dist))
+    return stream
   })
 
   gulp.task('clean',
