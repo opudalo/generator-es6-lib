@@ -103,7 +103,7 @@ export default function (gulp, rootDir) {
       .pipe(gulp.dest('./'))
       .pipe(git.commit('version bump'))
       .pipe(filter('package.json'))
-      .pipe(tagVersion({ prefix: '' }));
+      .pipe(tagVersion({ prefix: '' }))
   }
 }
 
