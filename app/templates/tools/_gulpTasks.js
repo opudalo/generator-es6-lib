@@ -29,7 +29,7 @@ export default function (gulp, rootDir) {
 
   gulp.task('default', ['watch'])
 
-  gulp.task('watch', ['test', 'prepublish'], () => {
+  gulp.task('watch', ['test', 'build'], () => {
     gulp.watch([src + '/**/*', test + '/**/*'], ['test'])
   })
 
