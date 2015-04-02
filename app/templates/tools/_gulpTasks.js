@@ -27,9 +27,9 @@ export default function (gulp, rootDir) {
 
   runSequence.use(gulp)
 
-  gulp.task('default', (cb) => runSequence('test', 'watch', cb))
+  gulp.task('default', ['watch'])
 
-  gulp.task('watch', ['test', 'build'], () => {
+  gulp.task('watch', ['test'], () => {
     gulp.watch([src + '/**/*', test + '/**/*'], ['test'])
   })
 
@@ -39,7 +39,7 @@ export default function (gulp, rootDir) {
     (cb) => runSequence('clean', ['copy-nonjs', 'build-js'], cb)
   )
 
-  gulp.task('test', ['test-<%= testEnvironment %>'])
+  gulp.task('test', (cb) => runSequence('build', 'test-<%= testEnvironment %>', cb))
 
   gulp.task('test-browser', ['webpack'], () =>
     gulp.src('test/runner.html')
