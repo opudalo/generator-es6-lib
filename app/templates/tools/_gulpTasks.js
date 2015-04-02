@@ -27,7 +27,7 @@ export default function (gulp, rootDir) {
 
   runSequence.use(gulp)
 
-  gulp.task('default', ['watch'])
+  gulp.task('default', (cb) => runSequence('test', 'watch', cb))
 
   gulp.task('watch', ['test', 'build'], () => {
     gulp.watch([src + '/**/*', test + '/**/*'], ['test'])
@@ -47,7 +47,7 @@ export default function (gulp, rootDir) {
       .on('error', onerror)
   )
 
-  gulp.task('test-node', ['prepublish'], () => {
+  gulp.task('test-node', () => {
     gulp.src(['test/**/*.js'])
       .pipe(mocha())
       .on('error', onerror)
