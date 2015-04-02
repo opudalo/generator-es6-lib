@@ -18,7 +18,10 @@ export default function (gulp, rootDir) {
     , lib = `${rootDir}/lib`
     , mochaPhantomConfig = {
       phantomjs: {
-        useColors: true
+        useColors: true,
+        settings: {
+          webSecurityEnabled: false
+        }
       }
     }
 
@@ -26,11 +29,13 @@ export default function (gulp, rootDir) {
 
   gulp.task('default', ['watch'])
 
-  gulp.task('watch', ['test'], () => {
+  gulp.task('watch', ['test', 'prepublish'], () => {
     gulp.watch([src + '/**/*', test + '/**/*'], ['test'])
   })
 
-  gulp.task('prepublish',
+  gulp.task('prepublish', ['build'])
+
+  gulp.task('build',
     (cb) => runSequence('clean', ['copy-nonjs', 'build-js'], cb)
   )
 
