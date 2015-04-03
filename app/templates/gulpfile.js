@@ -4,7 +4,7 @@
 useBabel(__dirname)
 
 var gulp = require('gulp')
-  , tasks = require('./tools/gulpTasks')
+  , tasks = require('./tools/gulp_tasks')
 
 tasks(gulp, __dirname)
 
