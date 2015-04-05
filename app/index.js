@@ -102,13 +102,13 @@ module.exports = yeoman.generators.Base.extend({
 
     this.template('src/_index.js', 'src/' + this.baseFileName + '.js')
     this.template('test/_test.js', 'test/test.js')
-    this.template('tools/_gulpTasks.js', 'tools/gulpTasks.js')
+    this.template('tools/_gulp_tasks.js', 'tools/gulp_tasks.js')
     this.template('_README.md', 'README.md')
     this.template('_LICENSE.md', 'LICENSE.md')
     this.template('_bower.json', 'bower.json')
     this.template('_package.json', 'package.json')
 
-    this.copy('tools/webpackConfig.js', 'tools/webpackConfig.js')
+    this.copy('tools/webpack_config.js', 'tools/webpack_config.js')
     this.copy('test/runner.html', 'test/runner.html')
     this.copy('gitignore', '.gitignore')
     this.copy('gulpfile.js', 'gulpfile.js')
