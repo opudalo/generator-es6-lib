@@ -2,12 +2,13 @@
 
 Yeoman es6 micro-library generator
 
+A collection of gulp tasks and environment setup can be found here [es6-lib](https://github.com/opudalo/es6-lib)  
+
 ## Features
 
 ✓ es6 ready with babel  
-✓ mocha unit tests for browser and node  
+✓ mocha unit tests for browser and node
 ✓ github integration for version increment  
-
 
 ## Usage 
 

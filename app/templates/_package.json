@@ -31,7 +31,7 @@
     "test-browser": "gulp test-browser"
   },
   "dependencies": {
-    "es6-lib": "^0.0.7",
+    "es6-lib": "^0.0.8",
     "chai": "^2.2.0"
   }
 }
