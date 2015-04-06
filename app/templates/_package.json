@@ -31,21 +31,6 @@
     "test-browser": "gulp test-browser"
   },
   "devDependencies": {
-    "babel": "^4.6.1",
-    "babel-core": "^4.6.1",
-    "babel-loader": "^4.0.0",
-    "chai": "^2.1.0",
-    "del": "^1.1.1",
-    "gulp": "^3.8.11",
-    "gulp-babel": "^4.0.0",
-    "gulp-bump": "^0.3.0",
-    "gulp-filter": "^2.0.2",
-    "gulp-git": "^1.1.0",
-    "gulp-mocha": "^2.0.0",
-    "gulp-mocha-phantomjs": "^0.5.3",
-    "gulp-tag-version": "^1.2.1",
-    "gulp-webpack-build": "^0.5.1",
-    "mocha": "^2.1.0",
-    "run-sequence": "^1.0.2"
+    "es6-lib": "^0.0.3"
   }
 }

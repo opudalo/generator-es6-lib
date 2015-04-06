@@ -1,9 +1,10 @@
-import 'babel/polyfill'
 import <%= exportName %> from '../src/<%= baseFileName %>'
-import {expect} from 'chai'
+import { chai }  from 'es6-lib'
+
+let {expect} = chai
 
 describe('<%= libName %> basics', function () {
   it('should exist', function () {
-    expect(typeof <%= exportName %>).to.equal('function')
+    expect(<%= exportName %>).to.be.function
   })
 })
