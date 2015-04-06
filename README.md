@@ -7,7 +7,7 @@ A collection of gulp tasks and environment setup can be found here [es6-lib](htt
 ## Features
 
 ✓ es6 ready with babel  
-✓ mocha unit tests for browser and node
+✓ mocha unit tests for browser and node  
 ✓ github integration for version increment  
 
 ## Usage 
