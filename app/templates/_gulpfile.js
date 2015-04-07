@@ -5,5 +5,6 @@ var gulp = require('gulp')
 es6lib({
   gulp: gulp,
   rootDir: __dirname,
-  testEnv: '<%= testEnvironment %>'
+  testEnv: '<%= testEnvironment %>',
+  webpackNoParse: ['babel-polyfill']
 })
