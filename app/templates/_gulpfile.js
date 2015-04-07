@@ -6,5 +6,5 @@ es6lib({
   gulp: gulp,
   rootDir: __dirname,
   testEnv: '<%= testEnvironment %>',
-  webpackNoParse: ['babel-polyfill']
+  webpackNoParse: [/babel-polyfill/]
 })
