@@ -31,7 +31,7 @@
     "test-browser": "gulp test-browser"
   },
   "dependencies": {
-    "es6-lib": "^0.0.9",
+    "es6-lib": "^0.0.10",
     "babel-polyfill": "git://github.com/grammarly/babel-polyfill.git#1.0.1",
     "chai": "^2.2.0"
   }
