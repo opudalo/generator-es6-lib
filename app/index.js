@@ -66,6 +66,29 @@ module.exports = yeoman.generators.Base.extend({
     }.bind(this))
   },
 
+  askForEs5mode: function () {
+    var done = this.async()
+      , prompts = [{
+        type: "list",
+        name: 'es5mode',
+        message: 'Force es5 only mode (optional):',
+        choices: [{
+          name: 'no, thanks',
+          value: false
+        }, {
+          name: 'yes, please',
+          value: true
+        }],
+        default: 1
+      }]
+
+    this.prompt(prompts, function (props) {
+      this.es5mode = props.es5mode
+
+      done()
+    }.bind(this))
+  },
+
   askForTestEnvironment: function () {
     var done = this.async()
       , prompts = [{
@@ -98,8 +121,8 @@ module.exports = yeoman.generators.Base.extend({
     this.mkdir('test');
     this.mkdir('lib');
 
-    this.template('src/_index.js', 'src/' + this.baseFileName + '.js')
-    this.template('test/_test.js', 'test/test.js')
+    this.template(this.es5mode ? 'src/_index_es5.js' : 'src/_index.js', 'src/' + this.baseFileName + '.js')
+    this.template(this.es5mode ? 'test/_test_es5.js' : 'test/_test.js', 'test/test.js')
     this.template('_README.md', 'README.md')
     this.template('_LICENSE.md', 'LICENSE.md')
     this.template('_bower.json', 'bower.json')
