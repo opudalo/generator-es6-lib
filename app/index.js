@@ -79,7 +79,7 @@ module.exports = yeoman.generators.Base.extend({
           name: 'yes, please',
           value: true
         }],
-        default: 1
+        default: 0
       }]
 
     this.prompt(prompts, function (props) {
