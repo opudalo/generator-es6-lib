@@ -126,7 +126,7 @@ module.exports = yeoman.generators.Base.extend({
     this.template('_README.md', 'README.md')
     this.template('_LICENSE.md', 'LICENSE.md')
     this.template('_package.json', 'package.json')
-    this.template('_gulpfile.js', 'gulpfile.js')
+    this.template('_gulpfile.babel.js', 'gulpfile.babel.js')
 
     this.copy('test/runner.html', 'test/runner.html')
     this.copy('gitignore', '.gitignore')
