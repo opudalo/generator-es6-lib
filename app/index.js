@@ -1,3 +1,4 @@
+var slugify = require("underscore.string/slugify")
 var yeoman = require('yeoman-generator')
   , defaults = {
     baseFileName: 'index',
@@ -11,8 +12,6 @@ var yeoman = require('yeoman-generator')
 
 module.exports = yeoman.generators.Base.extend({
   init: function () {
-    this.lodash.templateSettings.interpolate = /<%=([\s\S]+?)%>/g
-
     this.pkg = require('../package.json')
     this.currentYear = (new Date()).getFullYear()
   },
@@ -34,7 +33,7 @@ module.exports = yeoman.generators.Base.extend({
 
   askForLib: function () {
     var done = this.async()
-      , libName = extractLib(this.lodash, this.appname)
+      , libName = extractLib(this.appname)
 
     var prompts = [{
       name: 'libName',
@@ -125,7 +124,6 @@ module.exports = yeoman.generators.Base.extend({
     this.template(this.es5mode ? 'test/_test_es5.js' : 'test/_test.js', 'test/test.js')
     this.template('_README.md', 'README.md')
     this.template('_LICENSE.md', 'LICENSE.md')
-    this.template('_bower.json', 'bower.json')
     this.template('_package.json', 'package.json')
     this.template('_gulpfile.js', 'gulpfile.js')
 
@@ -135,15 +133,14 @@ module.exports = yeoman.generators.Base.extend({
 
   install: function () {
     this.installDependencies({
-      bower: true,
       npm: true,
       skipInstall: this.options['skip-install']
     })
   }
 })
 
-function extractLib (_, appname) {
-  var slugged = _.slugify(appname)
+function extractLib (appname) {
+  var slugged = slugify(appname)
   var match = slugged.match(/^generator-(.+)/)
 
   if (match && match.length === 2) return match[1].toLowerCase()
