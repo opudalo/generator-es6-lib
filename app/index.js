@@ -1,4 +1,5 @@
 var slugify = require("underscore.string/slugify")
+var mkdirp = require('mkdirp')
 var yeoman = require('yeoman-generator')
   , defaults = {
     baseFileName: 'index',
@@ -116,9 +117,9 @@ module.exports = yeoman.generators.Base.extend({
   },
 
   projectFiles: function () {
-    this.mkdir('src');
-    this.mkdir('test');
-    this.mkdir('lib');
+    mkdirp.sync('src');
+    mkdirp.sync('test');
+    mkdirp.sync('lib');
 
     this.template(this.es5mode ? 'src/_index_es5.js' : 'src/_index.js', 'src/' + this.baseFileName + '.js')
     this.template(this.es5mode ? 'test/_test_es5.js' : 'test/_test.js', 'test/test.js')
