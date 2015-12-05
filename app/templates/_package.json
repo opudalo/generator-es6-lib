@@ -30,8 +30,13 @@
     "test-node": "gulp test-node",
     "test-browser": "gulp test-browser"
   },
+  "babel": {
+    "presets": [
+      "es2015"
+    ]
+  },
   "dependencies": {
-    "es6-lib": "^0.1.0",
+    "es6-lib": "^0.1.1",
     "babel-polyfill": "git://github.com/grammarly/babel-polyfill.git#1.0.1",
     "chai": "^3.4.0"
   }
