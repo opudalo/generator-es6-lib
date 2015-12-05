@@ -27,6 +27,7 @@
   ],
   "dependencies": {
     "github": "^0.2.3",
+    "underscore.string": "^3.2.2",
     "yeoman-generator": "^0.21.1"
   },
   "devDependencies": {
