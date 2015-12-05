@@ -1,6 +1,5 @@
-// NOTE must be es5
-var es6lib = require('es6-lib')
-var gulp = require('gulp')
+import gulp from 'gulp'
+import es6lib from 'es6-lib'
 
 es6lib({
   gulp: gulp,

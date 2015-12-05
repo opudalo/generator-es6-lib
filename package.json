@@ -27,12 +27,12 @@
   ],
   "dependencies": {
     "github": "^0.2.3",
-    "yeoman-generator": "^0.18.10"
+    "yeoman-generator": "^0.21.1"
   },
   "devDependencies": {
     "gulp": "^3.8.11",
-    "gulp-bump": "^0.3.0",
-    "gulp-filter": "^2.0.2",
+    "gulp-bump": "^1.0.0",
+    "gulp-filter": "^3.0.1",
     "gulp-git": "^1.1.0",
     "gulp-tag-version": "^1.2.1"
   }
