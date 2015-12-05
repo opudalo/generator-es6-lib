@@ -11,7 +11,7 @@ var yeoman = require('yeoman-generator')
 
 module.exports = yeoman.generators.Base.extend({
   init: function () {
-    this._.templateSettings.interpolate = /<%=([\s\S]+?)%>/g
+    this.lodash.templateSettings.interpolate = /<%=([\s\S]+?)%>/g
 
     this.pkg = require('../package.json')
     this.currentYear = (new Date()).getFullYear()
@@ -34,7 +34,7 @@ module.exports = yeoman.generators.Base.extend({
 
   askForLib: function () {
     var done = this.async()
-      , libName = extractLib(this._, this.appname)
+      , libName = extractLib(this.lodash, this.appname)
 
     var prompts = [{
       name: 'libName',
